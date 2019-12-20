@@ -11,20 +11,6 @@ td, th { text-align: center; padding: 1em; border: 1px solid #ccc; }
 tr.alternate { background-color: #eee; }
 </style> 
 <script type="text/javascript">
-// This function calculates the time from "now" to that given
-// in the "date_string" parameter.  This difference in time is
-// expressed in days, hours, minutes, and seconds. 
-// These values are then used to update HTML elements that have
-// an id whose value corresponds to the unit of time. 
-// For example:
-//
-//  <span id="days"></span> 
-//
-// would contain the number of days from now until the date 
-// specified in the date_string parameter.
-//
-// Additionally, the value provided in the "date_string" parameter
-// should be included in an HTML element whose id="end-date".
 var countdown = function(date_string) {
     var now = new Date();
     var end = new Date(date_string);
