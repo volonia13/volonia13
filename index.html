@@ -11,33 +11,35 @@ WB_wombat_Init('https://web.archive.org/web', '20180103153143', 'kimoji.com');
 <script type="text/javascript">
 __wbhack.init('https://web.archive.org/web');
 </script>
-<script type="text/javascript">
-  var countdown = function (date_string) {
-    var now = new Date();
-    var end = new Date(date_string);
+<script>
+  // Set the date we're counting down to
+  var countdown = new Date("Dec 28, 2019 15:37:25").getTime();
 
-    var t = end.getTime() - now.getTime();
-    var s = Math.round(t / 1000);
+  // Update the count down every 1 second
+  var x = setInterval(function () {
 
-    var m = Math.round(s / 60);
-    s = Math.round(s % 60);
+    // Get today's date and time
+    var now = new Date().getTime();
 
-    var h = Math.round(m / 60);
-    m = Math.round(m % 60);
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
 
-    var d = Math.round(h / 24);
-    h = Math.round(h % 24);
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerHTML = d;
-    document.getElementById("hours").innerHTML = (h < 10) ? "0" + h : h;
-    document.getElementById("minutes").innerHTML = (m < 10) ? "0" + m : m;
-    document.getElementById("seconds").innerHTML = (s < 10) ? "0" + s : s;
-    document.getElementById("end").innerHTML = end.toString().split(' ').splice(1, 4).join(' ');
-  }
-  window.onload = function () {
-    countdown("12/28/2019");
-    setInterval(countdown, 1000, "12/28/2019");
-  }
+    // Display the result in the element with id="demo"
+    document.getElementById("countdown2").innerHTML = days + "días " + hours + "horas "
+      + minutes + "minutos " + seconds + "segundos ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown2").innerHTML = "EXPIRED";
+    }
+  }, 1000);
 </script>
 <link rel="stylesheet" type="text/css" href="static/css/banner-styles.css?v=1549496156" />
 <link rel="stylesheet" type="text/css" href="static/css/iconochive.css?v=1549496156" />
@@ -373,8 +375,9 @@ window.ShopifyPaypalV4VisibilityTracking = true;
     <span class="PGI__title">ARTICULO 2</span>
   </span>
 </a>
-</div> --><h1>COMEBACK<span id="end"></span></h1>
-<p id="countdown">
+</div> -->
+<h1>COMEBACK<span id="end"></span></h1>
+<p id="countdown2">
   <span id="days"></span> DÍAS<br />
   <span id="hours"></span>:<span id="minutes"></span> MINUTOS <span id="seconds"></span> SEGUNDOS
 </p>
