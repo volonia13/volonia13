@@ -1,0 +1,64 @@
+<!DOCYTYPE html> 
+<html> 
+<head><title>countdown</title> 
+<style type="text/css"> 
+body { padding: 2em; margin: 0px auto; background-color: white; color: #222; font-family: "Helvetica", "Arial", sans-serif;}
+h1 {border-bottom: 1px solid #aaa; text-align: center; }
+p#countdown { font-size: 150px; text-align: center; margin: 0; padding: 0;}
+table { width: 50%; margin: 0 auto; }
+thead > tr {background-color: #aaa; }
+td, th { text-align: center; padding: 1em; border: 1px solid #ccc; }
+tr.alternate { background-color: #eee; }
+</style> 
+<script type="text/javascript">
+// This function calculates the time from "now" to that given
+// in the "date_string" parameter.  This difference in time is
+// expressed in days, hours, minutes, and seconds. 
+// These values are then used to update HTML elements that have
+// an id whose value corresponds to the unit of time. 
+// For example:
+//
+//  <span id="days"></span> 
+//
+// would contain the number of days from now until the date 
+// specified in the date_string parameter.
+//
+// Additionally, the value provided in the "date_string" parameter
+// should be included in an HTML element whose id="end-date".
+var countdown = function(date_string) {
+    var now = new Date();
+    var end = new Date(date_string);
+ 
+    var t = end.getTime() - now.getTime();
+    var s = Math.round(t/1000);
+ 
+    var m = Math.round(s / 60);
+    s = Math.round(s % 60);
+ 
+    var h = Math.round(m / 60);
+    m = Math.round(m % 60);
+ 
+    var d = Math.round(h / 24);
+    h = Math.round(h % 24);
+ 
+    document.getElementById("days").innerHTML = d;
+    document.getElementById("hours").innerHTML = (h < 10) ? "0" + h : h;
+    document.getElementById("minutes").innerHTML = (m < 10) ? "0" + m : m;
+    document.getElementById("seconds").innerHTML = (s < 10) ? "0" + s : s;
+    document.getElementById("end").innerHTML = end.toString().split(' ').splice(1, 4).join(' ');
+}
+window.onload = function() {
+    countdown("06/02/2011");
+    setInterval(countdown, 1000, "06/02/2011");
+}
+</script> 
+</head> 
+ 
+<body> 
+<h1>Countdown to <span id="end"></span></h1> 
+<p id="countdown"> 
+<span id="days"></span> days<br/> 
+<span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span> 
+</p> 
+
+</body></html> 
