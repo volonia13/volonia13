@@ -31,8 +31,8 @@ __wbhack.init('https://web.archive.org/web');
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.getElementById("countdown").innerHTML = days + "días " + hours + "horas "
-      + minutes + "minutos " + seconds + "segundos ";
+    document.getElementById("countdown").innerHTML = days + " días " + hours + " horas "
+      + minutes + " minutos " + seconds + " segundos ";
 
     // If the count down is finished, write some text
     if (distance < 0) {
@@ -347,7 +347,10 @@ window.ShopifyPaypalV4VisibilityTracking = true;
     <div class="CartLink js-header-right">
       <a class="CL__link js-fade-in-header" href="">TIENDA</a>
     </div>
-      
+      <p id="countdown"></p>
+      <span id="days"></span> DÍAS<br />
+      <span id="hours"></span>:<span id="minutes"></span> MINUTOS <span id="seconds"></span> SEGUNDOS-->
+
   <main class="B__container" id="js-body-content"></main>
  
 <!--
@@ -377,10 +380,6 @@ window.ShopifyPaypalV4VisibilityTracking = true;
 </a>
 </div> -->
 <!--<h1>COMEBACK<span id="end"></span></h1>-->
-<p id="countdown"></p>
-  <span id="days"></span> DÍAS<br />
-  <span id="hours"></span>:<span id="minutes"></span> MINUTOS <span id="seconds"></span> SEGUNDOS-->
-
     </main>   
 
     <div class="Footer js-footer" id="js-footer">
