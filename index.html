@@ -32,13 +32,44 @@ __wbhack.init('https://web.archive.org/web');
 
     // Display the result in the element with id="demo"
     document.getElementById("countdown").innerHTML = "#PRJCT </br>" +
-    days + " días " + hours + " horas </br>"
-      + minutes + " minutos " + seconds + " segundos ";
+    days + " días " + hours + " horas ";
+    //  + minutes + " minutos " + seconds + " segundos "-->;
 
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+</script>
+<script>
+  // Set the date we're counting down to
+  var countDownDate30 = new Date("Dec 30, 2019 10:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x30 = setInterval(function () {
+
+    // Get today's date and time
+    var now30 = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance30 = countDownDate30 - now30;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days30 = Math.floor(distance30 / (1000 * 60 * 60 * 24));
+    var hours30 = Math.floor((distance30 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes30 = Math.floor((distance30 % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds30 = Math.floor((distance30 % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("countdown21").innerHTML = "HAUL HURTOS & ROBOS </br>" +
+      hours30 + " horas "
+      + minutes30 + " minutos";
+
+    // If the count down is finished, write some text
+    if (distance30 < 0) {
+      clearInterval(x30);
+      document.getElementById("countdown21").innerHTML = "EXPIRED";
     }
   }, 1000);
 </script>
@@ -84,6 +115,15 @@ __wbhack.init('https://web.archive.org/web');
   <meta name="msapplication-TileImage" content="//cdn.shopify.com/s/files/1/1850/9277/t/3/assets/ms-icon-144x144.png?2123976631759793988">
   <link href="https://web.archive.org/web/20180103153143im_/https://cdn.shopify.com/s/files/1/1850/9277/t/3/assets/ms-icon-144x144.png?2123976631759793988" rel="shortcut icon" sizes="16x16 32x32 64x64">
   <style>
+    .row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+}
     @font-face {
       font-family: "Y";
       src: url("assets/yeezy_tstar-heavy-webfont.eot?2123976631759793988");
@@ -331,8 +371,6 @@ window.ShopifyPaypalV4VisibilityTracking = true;
   </div>
   <div class="FN__bg"></div>
 </div>
-
-
     <div class="Header js-header">
       <div class="H__inner js-fade-in-header"><a href="javascript:;" class="HamBurger js-hotdog">
             <div class="HB__pill HB__pill_first"></div>
@@ -347,34 +385,40 @@ window.ShopifyPaypalV4VisibilityTracking = true;
     <div class="CartLink js-header-right">
       <a class="CL__link js-fade-in-header" href="teasers">TEASERS</a>
     </div>
-    <center>
+    <p>PRÓXIMOS VIDEOS:</p>
+    <div class="row">
+      <div class="column"><p id="countdown21"></p>
+        <img src="/assets/thumbnail1.jpg" alt="Haul Hurtos & Robos">
+    </div>
+      <div class="column"><p id="countdown"></p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/4My8AloaXMg?controls=0" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center><p id="countdown"></p>
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div></br><!--
   <main class="B__container" id="js-body-content"></main>
- 
-<!--
-  <div class="ProductGrid js-product-grid" id="js-scroll-to" data-per="5" data-length="12" data-handle="back-to-school"><a href="/web/20180103153143/https://kimoji.com/products/kimoji-backpack" id="PGI__id_10683265544" class="ProductGridItem js-product-grid-item type-DROP-03-BTS DROP-03">
-
+  <div class="ProductGrid js-product-grid" id="js-scroll-to" data-per="3" data-length="2" data-handle="back-to-school"><a href="/web/20180103153143/https://kimoji.com/products/kimoji-backpack" id="PGI__id_10683265544" class="ProductGridItem js-product-grid-item type-DROP-03-BTS DROP-03">
 <span class="PGI__img js-img" style="background-image:url('assets/FOTO1.jpg')">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/4My8AloaXMg?controls=0" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </span>
   <span class="PGI__text js-text">
     <span class="PGI__price">
-      <span>15€</span>
+      <span></span>
     </span>
-    <span class="PGI__title">ARTICULO 1</span>
+    <span class="PGI__title"><p id="countdown21"></p></span>
   </span>
 
 </a>
 <a href="" id="PGI__id_9714075208" class="ProductGridItem js-product-grid-item type-DROP-05 DROP-05">
   <span class="PGI__img js-img" style="background-image:url('assets/FOTO2.jpg')">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4My8AloaXMg?controls=0" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <img class="PGI__img_hover" src="assets/HIOVER2.jpg">
   </span>
   <span class="PGI__text js-text">
     <span class="PGI__price">
-      
-      <span>15€</span>
+      <span></span>
     </span>
-    <span class="PGI__title">ARTICULO 2</span>
+    <span class="PGI__title"><p id="countdown"></p></span>
   </span>
 </a>
 </div> -->
